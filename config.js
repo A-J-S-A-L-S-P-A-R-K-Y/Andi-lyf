@@ -9,7 +9,7 @@ if (existsSync(configPath)) require('dotenv').config({ path: configPath })
 module.exports = {
   VERSION: require('./package.json').version,
   SESSION_ID: (process.env.SESSION_ID || '8_3_c2d5_4ebf_40c6').trim(),
-  DATABASE: (process.env.DATABASE || 'postgresql://sd:Uh8qAePxPxw2_pX-kEoUrg@glad-lamb-8802.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full'),
+  DATABASE_URL: (process.env.DATABASE_URL || 'postgresql://sd:Uh8qAePxPxw2_pX-kEoUrg@glad-lamb-8802.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full'),
   KOYEB_API:(process.env.KOYEB_API|| 'plxhc49i3li1lpwm8e1k140ukdc01zbx793a6la1wxk4vqd5ag1l8oliejftafp8'),
   KOYEB: (process.eenv.KOYEB || 'true'),
   HANDLERS: (process.env.PREFIX || '^[.,!]').trim(),
