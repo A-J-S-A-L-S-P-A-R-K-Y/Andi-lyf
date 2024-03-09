@@ -5,28 +5,13 @@ const path = require('path')
 const configPath = path.join(__dirname, './config.env')
 const databasePath = path.join(__dirname, './database.db')
 if (existsSync(configPath)) require('dotenv').config({ path: configPath })
-const DATABASE_URL =
-  process.env.DATABASE_URL === undefined ? databasePath : process.env.DATABASE_URL
+
 module.exports = {
   VERSION: require('./package.json').version,
   SESSION_ID: (process.env.SESSION_ID || '8_3_c2d5_4ebf_40c6').trim(),
-  DATABASE:
-    DATABASE_URL === databasePath
-      ? new Sequelize({
-          dialect: 'sqlite',
-          storage: DATABASE_URL,
-          logging: false,
-        })
-      : new Sequelize(DATABASE_URL, {
-          dialect: 'postgres',
-          ssl: true,
-          protocol: 'postgres',
-          dialectOptions: {
-            native: true,
-            ssl: { require: true, rejectUnauthorized: false },
-          },
-          logging: false,
-        }),
+  DATABASE: (process.env.DATABASE || 'postgresql://sd:Uh8qAePxPxw2_pX-kEoUrg@glad-lamb-8802.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full'),
+  KOYEB_API:(process.env.KOYEB_API|| 'plxhc49i3li1lpwm8e1k140ukdc01zbx793a6la1wxk4vqd5ag1l8oliejftafp8'),
+  KOYEB: (process.eenv.KOYEB || 'true'),
   HANDLERS: (process.env.PREFIX || '^[.,!]').trim(),
   SUDO: process.env.SUDO || '919539413641',
   HEROKU_APP_NAME: process.env.HEROKU_APP_NAME,
