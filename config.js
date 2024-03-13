@@ -10,7 +10,7 @@ module.exports = {
   VERSION: require('./package.json').version,
   SESSION_ID: (process.env.SESSION_ID || '12_3_6977_dff3_d63d').trim(),
   DATABASE_URL: (process.env.DATABASE_URL || 'postgresql://thanseeh:KSPeGxx6fKcXlpq8cf0htA@ivory-digger-8950.8nk.gcp-asia-southeast1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full'),
-  KOYEB_API:(process.env.KOYEB_API|| 'plxhc49i3li1lpwm8e1k140ukdc01zbx793a6la1wxk4vqd5ag1l8oliejftafp8'),
+  KOYEB_API:(process.env.KOYEB_API|| 'vbv6zpusvxd96jxw9l2nkcai74b5w37q6qlyo7f72c27amq1hul8b08fezxdbr7k'),
   KOYEB: (process.eenv.KOYEB || 'true'),
   HANDLERS: (process.env.PREFIX || '^[.,!]').trim(),
   SUDO: process.env.SUDO || '919539413641',
